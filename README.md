@@ -1,2 +1,2 @@
-# intro_arduino
-Minicurso introdutório de Arduino
+# apresentacao_base
+Apresentação base usando reveal.js
