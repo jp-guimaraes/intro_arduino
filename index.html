@@ -33,7 +33,7 @@
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
 	</head>
-	<style>
+	<!-- <style>
 		* {
 		  box-sizing: border-box;
 		}
@@ -46,17 +46,88 @@
 		.column {
 		  flex: 33.33%;
 		  padding: 5px;
-		</style>
+	</style> -->
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h3>João Paulo F. Guimarães</h3>
+					<h2>João Paulo F. Guimarães</h2>
+					<h3>Minicurso de Arduino</h3>
+					<h6>Expotec IFRN/JC 2019</h6>
 					<p> <small><a href = "mailto: joao.guimaraes@ifrn.edu.br">joao.guimaraes@ifrn.edu.br</a></small> </p>
 					<p>						
 						<a href="http://jp-guimaraes.github.io">website</a>
 					</p>
-					</section>				
+				</section>	
+
+				<section>
+					<h2>O que é esse tal de arduino?</h2>
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTXNJp_-pwWu2AWlIWUC-0_GdAC1VEGreNiRbrjRk4a_dcAIyDJ" alt="Arduino uno" style="width:500px;height:600px;"> 					
+				</section>
+								
+				<section>					
+						<section id="fragments">
+								<h3>O que é esse tal de arduino?</h3>
+								<p class="fragment">Microcontrolador Atmel</p>
+								<p class="fragment">Computador num chip</p>
+								<p class="fragment">Processador + Memória + Entrada/Saída</p>
+								<p class="fragment">Baixo custo $ </p>
+								<p class="fragment">Baixo consumo energético</p>
+								<p class="fragment">Automação</p>
+						</section>
+
+						<section id="fragments">
+								<h3>O que é esse tal de arduino?</h3>
+								<p class="fragment">Microcontrolador Atmel</p>
+								<p class="fragment">Software livre</p>
+								<p class="fragment">Hardware livre</p>
+								<p class="fragment">Baixo custo</p>
+								<p class="fragment">Modularidade</p>
+								<p class="fragment">Reaproveitamento de Hardware e Software</p>
+						</section>
+				</section>
+
+
+				<section data-markdown>
+						<script type="text/template">
+							# Olá mundo 							
+							```c
+							// Função setup
+							void setup() {
+								// Inicialização do LED como saída de dados
+								pinMode(LED_BUILTIN, OUTPUT);
+							}
+
+							// Loop principal
+							void loop() {
+								digitalWrite(LED_BUILTIN, HIGH);   // Liga led
+								delay(1000);                       // espera 1s
+								digitalWrite(LED_BUILTIN, LOW);    // desliga led
+								delay(1000);                       // espera 1s
+							}							
+							```
+						</script>
+					</section>
+
+					<!-- <section>
+						<h2>Pretty Code</h2>
+						<pre><code class="hljs" data-trim data-line-numbers="4,8-9">
+								// Função setup
+							void setup() {
+								// Inicialização do LED como saída de dados
+								pinMode(LED_BUILTIN, OUTPUT);
+							}
+
+							// Loop principal
+							void loop() {
+								digitalWrite(LED_BUILTIN, HIGH);   // Liga led
+								delay(1000);                       // espera 1s
+								digitalWrite(LED_BUILTIN, LOW);    // desliga led
+								delay(1000);                       // espera 1s
+							}				
+							</code></pre>
+							<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+						</section> -->
 
 				<section>
 					<h4>Dúvidas, críticas, sugestões?</h4>
