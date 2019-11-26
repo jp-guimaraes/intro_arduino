@@ -5,14 +5,22 @@
 
 */
 
-//Inicializa o pino 13 como saída para ligar ao led padrão da placa
+// variáveis globais
+int pino_led_embutido = 13;
+int pino_led_externo = 12;
+
+// Inicialização de variávies, módulos, pinos, etc
 void setup(){
-  pinMode(13, OUTPUT);
+	pinMode(pino_led_embutido, OUTPUT);
+	pinMode(pino_led_externo, OUTPUT);
 }
 
+// Laço principal 	
 void loop(){
-  digitalWrite(13, HIGH);
-  delay(1000); // espera 1000 milissegundos
-  digitalWrite(13, LOW);
-  delay(1000); // espera 1000 milissegundos
+	digitalWrite(pino_led_embutido, HIGH);
+	digitalWrite(pino_led_externo, LOW);
+	delay(1000); // espera 1000 milissegundos
+	digitalWrite(pino_led_embutido, LOW);
+	digitalWrite(pino_led_externo, HIGH);
+	delay(1000); // espera 1000 milissegundos
 }

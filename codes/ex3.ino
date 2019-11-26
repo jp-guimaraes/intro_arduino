@@ -26,8 +26,6 @@ void setup(){
 
 // Laço principal 	
 void loop(){
-	piscar(250);
-	piscar(500);  
-	piscar(1000);
-	piscar(2000);
-}
+	for(int i=250;i<=2000;i=i+250){
+	piscar(i);
+}					
