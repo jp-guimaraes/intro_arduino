@@ -56,9 +56,14 @@
 					<h6>Expotec IFRN/JC 2019</h6>
 					<p> <small><a href = "mailto: joao.guimaraes@ifrn.edu.br">joao.guimaraes@ifrn.edu.br</a></small> </p>
 					<p>						
-						<a href="http://jp-guimaraes.github.io">website</a>
+						<a href="http://jp-guimaraes.github.io">http://jp-guimaraes.github.io</a>
 					</p>
 				</section>	
+
+				<section>
+					<h2> Apresentação </h2>
+						<p> <a href="https://jp-guimaraes.github.io/eu/#/1">https://jp-guimaraes.github.io/eu/</a> </p>
+				</section>
 
 				<section>
 					<h2>O que é esse tal de arduino?</h2>
@@ -127,50 +132,244 @@
 							<a href="https://www.tinkercad.com/">Tinkercad</a>
 						</p>							
 						<p class="fragment">Vantagens do uso de um simulador num projeto microcontrolado?</p>						
+						<p class="fragment">Por que não funcionou? Hardware, software?</p>
+					</section>					
 				</section>
 
+				<section>
+					<h3>Hello world!</h3>					
+					<p class="fragment">Software</p>						
+					<p class="fragment">Hardware</p>						
+				</section>	
+				
+				<section>
+					<h3>Hello world</h3>
+					<style>
+						.container{
+							display: flex;
+						}
+						.col{
+							flex: 1;
+						}
+						</style>
+						
+						<div class="container">							
+							
+							<div class="col">
+								<ul>
+									<li>Hardware</li>
+									<li>Olá mundo, uga uga</li>									
+								</ul>
+							</div>
+
+							<div class="col">
+									<img src="https://raw.githubusercontent.com/jp-guimaraes/intro_arduino/master/assets/circuitos/Circuito1.png" alt="Circuito 1" style="width:500px;height:500px;">
+							</div>
+						
+						</div>
+				</section>
+
+				<section>
+					<h3>Hello world</h3>
+					<style>
+						.container{
+							display: flex;
+						}
+						.col{
+							flex: 1;
+						}
+						</style>
+						
+						<div class="container">							
+							
+							<div class="col">
+								<ul>
+									<li>Hardware</li>
+									<li>Olá mundo?</li>									
+								</ul>
+							</div>
+
+							<div class="col">
+									<img src="https://raw.githubusercontent.com/jp-guimaraes/intro_arduino/master/assets/circuitos/Circuito2.png" alt="Circuito 2" style="width:500px;height:500px;">
+							</div>
+						
+						</div>
+				</section>
+
+				<section>
+					<h3>Hello world</h3>
+					<style>
+						.container{
+							display: flex;
+						}
+						.col{
+							flex: 1;
+						}
+						</style>
+						
+						<div class="container">							
+							
+							<div class="col">
+								<ul>
+									<li>Hardware</li>
+									<li>Olá mundo!</li>
+									<li>Usando o Microcontrolador</li>
+									<li>Saída digital</li>									
+								</ul>
+							</div>
+
+							<div class="col">
+									<img src="https://raw.githubusercontent.com/jp-guimaraes/intro_arduino/master/assets/circuitos/Circuito3.png" alt="Circuito 3" style="width:500px;height:500px;">
+							</div>
+						
+						</div>
 				</section>
 
 				<section data-markdown>
 						<script type="text/template">
 							# Olá mundo 							
 							```c
-							// Função setup
-							void setup() {
-								// Inicialização do LED como saída de dados
-								pinMode(LED_BUILTIN, OUTPUT);
+							void setup(){
+								pinMode(13, OUTPUT);
+								pinMode(12, OUTPUT);
 							}
 
-							// Loop principal
-							void loop() {
-								digitalWrite(LED_BUILTIN, HIGH);   // Liga led
-								delay(1000);                       // espera 1s
-								digitalWrite(LED_BUILTIN, LOW);    // desliga led
-								delay(1000);                       // espera 1s
-							}							
+							void loop(){
+								digitalWrite(13, HIGH);
+								digitalWrite(12, LOW);
+								delay(1000); // espera 1000 milissegundos
+								digitalWrite(13, LOW);
+								digitalWrite(12, HIGH);
+								delay(1000); // espera 1000 milissegundos
+							}									
 							```
 						</script>
 					</section>
 
-					<!-- <section>
-						<h2>Pretty Code</h2>
-						<pre><code class="hljs" data-trim data-line-numbers="4,8-9">
-								// Função setup
-							void setup() {
-								// Inicialização do LED como saída de dados
-								pinMode(LED_BUILTIN, OUTPUT);
+					<section data-markdown>
+						<script type="text/template">
+							### Anatomia de um firmware							
+							```c
+							// variáveis globaiss
+							int pino_led_embutido = 13;
+							int pino_led_externo = 12;
+
+							// Inicialização de variávies, módulos, pinos, etc
+							void setup(){
+								pinMode(pino_led_embutido, OUTPUT);
+								pinMode(pino_led_externo, OUTPUT);
 							}
 
-							// Loop principal
-							void loop() {
-								digitalWrite(LED_BUILTIN, HIGH);   // Liga led
-								delay(1000);                       // espera 1s
-								digitalWrite(LED_BUILTIN, LOW);    // desliga led
-								delay(1000);                       // espera 1s
-							}				
-							</code></pre>
-							<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-						</section> -->
+							// Laço principal 	
+							void loop(){
+								digitalWrite(pino_led_embutido, HIGH);
+								digitalWrite(pino_led_externo, LOW);
+								delay(1000); // espera 1000 milissegundos
+								digitalWrite(pino_led_embutido, LOW);
+								digitalWrite(pino_led_externo, HIGH);
+								delay(1000); // espera 1000 milissegundos
+							}									
+							```
+						</script>
+					</section>
+					
+					<section data-markdown>
+						<script type="text/template">
+							# Funções são bem vindas!							
+							```c
+							// variáveis globaiss
+							int pino_led_embutido = 13;
+							int pino_led_externo = 12;
+
+							void piscar(int tempo){
+								digitalWrite(pino_led_embutido, HIGH);
+								digitalWrite(pino_led_externo, LOW);
+								delay(tempo); // espera
+								digitalWrite(pino_led_embutido, LOW);
+								digitalWrite(pino_led_externo, HIGH);
+								delay(tempo); // espera 
+							}
+
+							// Inicialização de variávies, módulos e pinos
+							void setup(){
+								pinMode(pino_led_embutido, OUTPUT);
+								pinMode(pino_led_externo, OUTPUT);
+							}
+
+							// Laço principal 	
+							void loop(){
+								piscar(250);
+								piscar(500);  
+								piscar(1000);
+								piscar(2000);
+							}											
+							```
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							# Estruturas de repetição funcionam normalmente							
+							```c
+							// variáveis globaiss
+							int pino_led_embutido = 13;
+							int pino_led_externo = 12;
+
+							void piscar(int tempo){
+								digitalWrite(pino_led_embutido, HIGH);
+								digitalWrite(pino_led_externo, LOW);
+								delay(tempo); // espera
+								digitalWrite(pino_led_embutido, LOW);
+								digitalWrite(pino_led_externo, HIGH);
+								delay(tempo); // espera 
+							}
+
+							// Inicialização de variávies, módulos e pinos
+							void setup(){
+								pinMode(pino_led_embutido, OUTPUT);
+								pinMode(pino_led_externo, OUTPUT);
+							}
+
+							// Laço principal 	
+							void loop(){
+							for(int i=250;i<=2000;i=i+250){
+								piscar(i);
+							}																		
+							```
+						</script>
+					</section>
+
+					<section>
+						<h2>Pretty Code</h2>
+						<pre><code class="hljs" data-trim data-line-numbers="4,8-9">
+							// variáveis globaiss
+							int pino_led_embutido = 13;
+							int pino_led_externo = 12;
+
+							void piscar(int tempo){
+								digitalWrite(pino_led_embutido, HIGH);
+								digitalWrite(pino_led_externo, LOW);
+								delay(tempo); // espera
+								digitalWrite(pino_led_embutido, LOW);
+								digitalWrite(pino_led_externo, HIGH);
+								delay(tempo); // espera 
+							}
+
+							// Inicialização de variávies, módulos e pinos
+							void setup(){
+								pinMode(pino_led_embutido, OUTPUT);
+								pinMode(pino_led_externo, OUTPUT);
+							}
+
+							// Laço principal 	
+							void loop(){
+								piscar(250);
+								piscar(500);  
+								piscar(1000);
+								piscar(2000);
+							}								
+							</code></pre>							
+						</section>
 
 				<section>
 					<h4>Dúvidas, críticas, sugestões?</h4>
