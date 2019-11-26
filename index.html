@@ -142,6 +142,12 @@
 						</p>							
 						<p class="fragment">Vantagens do uso de um simulador num projeto microcontrolado?</p>						
 						<p class="fragment">Por que não funcionou? Hardware, software?</p>
+					</section>
+					<section>
+						<h3>Elementos do simulador</h1>
+						<p class="fragment">Componentes</p>
+						<p class="fragment">Código</p>
+						<p class="fragment">Iniciar a simulação</p>
 					</section>					
 				</section>
 
@@ -239,49 +245,36 @@
 						</div>
 				</section>
 
-				<section data-markdown>
-						<script type="text/template">
-							# Olá mundo 							
-							```c
-							void setup(){
-								pinMode(13, OUTPUT);								
-							}
-
-							void loop(){
-								digitalWrite(13, HIGH);
-								delay(1000); // espera 1000 milissegundos
-								digitalWrite(13, LOW);
-								delay(1000); // espera 1000 milissegundos
-							}									
-							```
-						</script>
-					</section>
-
-					<section>
-							<h2>Anatomia de um firmware</h2>
-							<pre><code data-trim>
+				<section>
+					<h2>Hello world: Anatomia de um firmware</h2>
+					<pre><code data-trim>
 // variáveis globais
-void setup(){
-	pinMode(13, OUTPUT);								
-}
+int pino_led = 12;
 
+//Função de inicalização
+void setup(){
+	pinMode(pino_led, OUTPUT);								
+}
 // Loop principal
 void loop(){
-	digitalWrite(13, HIGH);
+	digitalWrite(pino_led, HIGH);
 	delay(1000); // espera 1000 milissegundos
-	digitalWrite(13, LOW);
+	digitalWrite(pino_led, LOW);
 	delay(1000); // espera 1000 milissegundos
 }								
-							</code></pre>							
-					</section>
+					</code></pre>							
+				</section>
 
-					<section>
-						<h3>Incrementando o circuito!</h3>
-					</section>
+				<section>
+					<h3>Quiz: Incrementando o código!</h3>
+					<p class="fragment">Crie a conta no <a href="https://www.tinkercad.com/">Tinkercad</a></p>
+					<p class="fragment">Use o led embutido da placa conectado ao pino 13 para piscar alternadamente com o led do pino 12.</p>
+					<p class="fragment">Circuito 3</p>
+				</section>
 
-					<section>
-						<h2>Anatomia de um firmware</h2>
-						<pre><code data-trim>
+				<section>
+					<h2>Incrementando o códgio</h2>
+					<pre><code data-trim>
 // variáveis globais
 int pino_led_embutido = 13;
 int pino_led_externo = 12;
@@ -301,7 +294,7 @@ void loop(){
 	digitalWrite(pino_led_externo, HIGH);
 	delay(1000); // espera 1000 milissegundos
 }				
-						</code></pre>							
+						</code></pre>											
 					</section>
 
 										
@@ -334,45 +327,42 @@ void loop(){
 	piscar(1000);
 	piscar(2000);
 }											
-						</code></pre>							
+						</code></pre>	
+						<p>Circuito 4</p>							
 					</section>
-						
+
+					<section>
+						<h2>Estruturas de repetição funcionam normalmente</h2>
+						<pre><code>
+// variáveis globaiss
+int pino_led_embutido = 13;
+int pino_led_externo = 12;
+
+void piscar(int tempo){
+	digitalWrite(pino_led_embutido, HIGH);
+	digitalWrite(pino_led_externo, LOW);
+	delay(tempo); // espera
+	digitalWrite(pino_led_embutido, LOW);
+	digitalWrite(pino_led_externo, HIGH);
+	delay(tempo); // espera 
+}
+
+// Inicialização de variávies, módulos e pinos
+void setup(){
+	pinMode(pino_led_embutido, OUTPUT);
+	pinMode(pino_led_externo, OUTPUT);
+}
+
+// Laço principal 	
+void loop(){
+	for(int i=250;i<=2000;i=i+250){
+	piscar(i);
+}																		
+					</code></pre>							
 				</section>
 
-				<section data-markdown>
-						<script type="text/template">
-							# Estruturas de repetição funcionam normalmente							
-							```c
-							// variáveis globaiss
-							int pino_led_embutido = 13;
-							int pino_led_externo = 12;
 
-							void piscar(int tempo){
-								digitalWrite(pino_led_embutido, HIGH);
-								digitalWrite(pino_led_externo, LOW);
-								delay(tempo); // espera
-								digitalWrite(pino_led_embutido, LOW);
-								digitalWrite(pino_led_externo, HIGH);
-								delay(tempo); // espera 
-							}
-
-							// Inicialização de variávies, módulos e pinos
-							void setup(){
-								pinMode(pino_led_embutido, OUTPUT);
-								pinMode(pino_led_externo, OUTPUT);
-							}
-
-							// Laço principal 	
-							void loop(){
-							for(int i=250;i<=2000;i=i+250){
-								piscar(i);
-							}																		
-							```
-						</script>
-				</section>
-
-				
-
+		
 				<section>
 					<h4>Dúvidas, críticas, sugestões?</h4>
 					<p> <small><a href = "mailto: joao.guimaraes@ifrn.edu.br">joao.guimaraes@ifrn.edu.br</a></small> </p>
