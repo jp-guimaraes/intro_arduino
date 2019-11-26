@@ -66,6 +66,14 @@
 				</section>
 
 				<section>
+					<h2>Escopo do curso?</h2>
+					<p class="fragment">Curso introdutório</p>
+					<p class="fragment">Arduino pra quem não tem Arduino</p>
+					<p class="fragment">Simulador</p>
+					<p class="fragment">Perfil do aluno?</p>					
+				</section>
+
+				<section>
 					<h2>O que é esse tal de arduino?</h2>
 					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTXNJp_-pwWu2AWlIWUC-0_GdAC1VEGreNiRbrjRk4a_dcAIyDJ" alt="Arduino uno" style="width:500px;height:500px;"> 					
 				</section>
@@ -107,14 +115,15 @@
 							
 							<div class="col">
 								<ul>
-									<li>USB</li>
-									<li>Botão de reset</li>
-									<li>Alimentação</li>
-									<li>Entradas e saídas digitais</li>
-									<li>Alimentação 5V, 3.3V e GND</li>
-									<li>Entradas</li>
-									<li>LEDs Tx/Rx</li>
-									<li>LED embarcado</li>
+									<li class="fragment">USB</li>
+									<li class="fragment">Botão de reset</li>
+									<li class="fragment">Alimentação</li>
+									<li class="fragment">Entradas e saídas digitais</li>
+									<li class="fragment">Alimentação 5V, 3.3V e GND</li>
+									<li class="fragment">Entradas</li>
+									<li class="fragment">LEDs Tx/Rx</li>
+									<li class="fragment">LED embarcado</li>
+									<li class="fragment">Eletrônica auxiliar</li>									
 								</ul>
 							</div>
 
@@ -230,53 +239,66 @@
 							# Olá mundo 							
 							```c
 							void setup(){
-								pinMode(13, OUTPUT);
-								pinMode(12, OUTPUT);
+								pinMode(13, OUTPUT);								
 							}
 
 							void loop(){
 								digitalWrite(13, HIGH);
-								digitalWrite(12, LOW);
 								delay(1000); // espera 1000 milissegundos
 								digitalWrite(13, LOW);
-								digitalWrite(12, HIGH);
 								delay(1000); // espera 1000 milissegundos
 							}									
 							```
 						</script>
 					</section>
 
-					<section data-markdown>
-						<script type="text/template">
-							### Anatomia de um firmware							
-							```c
-							// variáveis globaiss
-							int pino_led_embutido = 13;
-							int pino_led_externo = 12;
+					<section>
+							<h2>Anatomia de um firmware</h2>
+							<pre><code data-trim>
+// variáveis globais
+void setup(){
+	pinMode(13, OUTPUT);								
+}
 
-							// Inicialização de variávies, módulos, pinos, etc
-							void setup(){
-								pinMode(pino_led_embutido, OUTPUT);
-								pinMode(pino_led_externo, OUTPUT);
-							}
-
-							// Laço principal 	
-							void loop(){
-								digitalWrite(pino_led_embutido, HIGH);
-								digitalWrite(pino_led_externo, LOW);
-								delay(1000); // espera 1000 milissegundos
-								digitalWrite(pino_led_embutido, LOW);
-								digitalWrite(pino_led_externo, HIGH);
-								delay(1000); // espera 1000 milissegundos
-							}									
-							```
-						</script>
+// Loop principal
+void loop(){
+	digitalWrite(13, HIGH);
+	delay(1000); // espera 1000 milissegundos
+	digitalWrite(13, LOW);
+	delay(1000); // espera 1000 milissegundos
+}								
+							</code></pre>							
 					</section>
-					
-					<section data-markdown>
-						<script type="text/template">
-							# Funções são bem vindas!							
-							```c
+
+					<section>
+						<h2>Anatomia de um firmware</h2>
+						<pre><code data-trim>
+// variáveis globais
+int pino_led_embutido = 13;
+int pino_led_externo = 12;
+
+// Inicialização de variávies, módulos, pinos, etc
+void setup(){
+	pinMode(pino_led_embutido, OUTPUT);
+	pinMode(pino_led_externo, OUTPUT);
+}
+
+// Laço principal 	
+void loop(){
+	digitalWrite(pino_led_embutido, HIGH);
+	digitalWrite(pino_led_externo, LOW);
+	delay(1000); // espera 1000 milissegundos
+	digitalWrite(pino_led_embutido, LOW);
+	digitalWrite(pino_led_externo, HIGH);
+	delay(1000); // espera 1000 milissegundos
+}				
+						</code></pre>							
+					</section>
+
+										
+				<section>
+							<h2>Funções são bem vindas!</h2>
+							<pre><code>
 							// variáveis globaiss
 							int pino_led_embutido = 13;
 							int pino_led_externo = 12;
@@ -303,11 +325,12 @@
 								piscar(1000);
 								piscar(2000);
 							}											
-							```
-						</script>
+						</code></pre>							
 					</section>
+						
+				</section>
 
-					<section data-markdown>
+				<section data-markdown>
 						<script type="text/template">
 							# Estruturas de repetição funcionam normalmente							
 							```c
@@ -337,39 +360,9 @@
 							}																		
 							```
 						</script>
-					</section>
+				</section>
 
-					<section>
-						<h2>Pretty Code</h2>
-						<pre><code class="hljs" data-trim data-line-numbers="4,8-9">
-							// variáveis globaiss
-							int pino_led_embutido = 13;
-							int pino_led_externo = 12;
-
-							void piscar(int tempo){
-								digitalWrite(pino_led_embutido, HIGH);
-								digitalWrite(pino_led_externo, LOW);
-								delay(tempo); // espera
-								digitalWrite(pino_led_embutido, LOW);
-								digitalWrite(pino_led_externo, HIGH);
-								delay(tempo); // espera 
-							}
-
-							// Inicialização de variávies, módulos e pinos
-							void setup(){
-								pinMode(pino_led_embutido, OUTPUT);
-								pinMode(pino_led_externo, OUTPUT);
-							}
-
-							// Laço principal 	
-							void loop(){
-								piscar(250);
-								piscar(500);  
-								piscar(1000);
-								piscar(2000);
-							}								
-							</code></pre>							
-						</section>
+				
 
 				<section>
 					<h4>Dúvidas, críticas, sugestões?</h4>
