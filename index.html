@@ -167,7 +167,8 @@
 							<div class="col">
 								<ul>
 									<li>Hardware</li>
-									<li>Olá mundo, uga uga</li>									
+									<li>Olá mundo, uga uga</li>		
+									<li>Circuito 1</li>							
 								</ul>
 							</div>
 
@@ -194,7 +195,8 @@
 							<div class="col">
 								<ul>
 									<li>Hardware</li>
-									<li>Olá mundo?</li>									
+									<li>Olá mundo?</li>	
+									<li>Circuito 2</li>								
 								</ul>
 							</div>
 
@@ -223,12 +225,14 @@
 									<li>Hardware</li>
 									<li>Olá mundo!</li>
 									<li>Usando o Microcontrolador</li>
-									<li>Saída digital</li>									
+									<li>Saída digital</li>	
+									<li>Circuito 3</li>
+									<li class="fragment">Código?</li>								
 								</ul>
 							</div>
 
 							<div class="col">
-									<img src="https://raw.githubusercontent.com/jp-guimaraes/intro_arduino/master/assets/circuitos/Circuito_3.png" alt="Circuito 3" style="width:600px;height:400px;">
+									<img src="https://raw.githubusercontent.com/jp-guimaraes/intro_arduino/master/assets/circuitos/Circuito_3.png" alt="Circuito 3" style="width:750px;height:350px;">
 							</div>
 						
 						</div>
@@ -271,6 +275,10 @@ void loop(){
 					</section>
 
 					<section>
+						<h3>Incrementando o circuito!</h3>
+					</section>
+
+					<section>
 						<h2>Anatomia de um firmware</h2>
 						<pre><code data-trim>
 // variáveis globais
@@ -299,32 +307,32 @@ void loop(){
 				<section>
 							<h2>Funções são bem vindas!</h2>
 							<pre><code>
-							// variáveis globaiss
-							int pino_led_embutido = 13;
-							int pino_led_externo = 12;
+// variáveis globaiss
+int pino_led_embutido = 13;
+int pino_led_externo = 12;
 
-							void piscar(int tempo){
-								digitalWrite(pino_led_embutido, HIGH);
-								digitalWrite(pino_led_externo, LOW);
-								delay(tempo); // espera
-								digitalWrite(pino_led_embutido, LOW);
-								digitalWrite(pino_led_externo, HIGH);
-								delay(tempo); // espera 
-							}
+void piscar(int tempo){
+	digitalWrite(pino_led_embutido, HIGH);
+	digitalWrite(pino_led_externo, LOW);
+	delay(tempo); // espera
+	digitalWrite(pino_led_embutido, LOW);
+	digitalWrite(pino_led_externo, HIGH);
+	delay(tempo); // espera 
+}
 
-							// Inicialização de variávies, módulos e pinos
-							void setup(){
-								pinMode(pino_led_embutido, OUTPUT);
-								pinMode(pino_led_externo, OUTPUT);
-							}
+// Inicialização de variávies, módulos e pinos
+void setup(){
+	pinMode(pino_led_embutido, OUTPUT);
+	pinMode(pino_led_externo, OUTPUT);
+}
 
-							// Laço principal 	
-							void loop(){
-								piscar(250);
-								piscar(500);  
-								piscar(1000);
-								piscar(2000);
-							}											
+// Laço principal 	
+void loop(){
+	piscar(250);
+	piscar(500);  
+	piscar(1000);
+	piscar(2000);
+}											
 						</code></pre>							
 					</section>
 						
