@@ -72,13 +72,13 @@
 					<p class="fragment">Simulador</p>
 					<p class="fragment">Perfil do aluno?</p>					
 				</section>
-
-				<section>
-					<h2>O que é esse tal de arduino?</h2>
-					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTXNJp_-pwWu2AWlIWUC-0_GdAC1VEGreNiRbrjRk4a_dcAIyDJ" alt="Arduino uno" style="width:500px;height:500px;"> 					
-				</section>
+						
 								
-				<section>					
+				<section>
+						<section>
+								<h2>O que é esse tal de arduino?</h2>
+								<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTXNJp_-pwWu2AWlIWUC-0_GdAC1VEGreNiRbrjRk4a_dcAIyDJ" alt="Arduino uno" style="width:500px;height:500px;"> 					
+							</section>					
 						<section id="fragments">
 								<h3>O que é esse tal de arduino?</h3>
 								<p class="fragment">Microcontrolador Atmel</p>
@@ -98,42 +98,42 @@
 								<p class="fragment">Modularidade</p>
 								<p class="fragment">Reaproveitamento de Hardware e Software</p>
 						</section>
-				</section>
-
-				<section>
-					<h3>Olhando mais de perto!</h3>
-					<style>
-						.container{
-							display: flex;
-						}
-						.col{
-							flex: 1;
-						}
-						</style>
-						
-						<div class="container">							
+				
+					<section>
+						<h3>Olhando mais de perto!</h3>
+						<style>
+							.container{
+								display: flex;
+							}
+							.col{
+								flex: 1;
+							}
+							</style>
 							
-							<div class="col">
-								<ul>
-									<li class="fragment">USB</li>
-									<li class="fragment">Botão de reset</li>
-									<li class="fragment">Alimentação</li>
-									<li class="fragment">Entradas e saídas digitais</li>
-									<li class="fragment">Alimentação 5V, 3.3V e GND</li>
-									<li class="fragment">Entradas</li>
-									<li class="fragment">LEDs Tx/Rx</li>
-									<li class="fragment">LED embarcado</li>
-									<li class="fragment">Eletrônica auxiliar</li>									
-								</ul>
-							</div>
-
-							<div class="col">
-									<img src="https://raw.githubusercontent.com/jp-guimaraes/intro_arduino/master/assets/uno_closeup.png" alt="Arduino uno" style="width:500px;height:500px;">
+							<div class="container">							
+								
+								<div class="col">
+									<ul>
+										<li class="fragment">USB</li>
+										<li class="fragment">Botão de reset</li>
+										<li class="fragment">Alimentação</li>
+										<li class="fragment">Entradas e saídas digitais</li>
+										<li class="fragment">Alimentação 5V, 3.3V e GND</li>
+										<li class="fragment">Entradas</li>
+										<li class="fragment">LEDs Tx/Rx</li>
+										<li class="fragment">LED embarcado</li>
+										<li class="fragment">Eletrônica auxiliar</li>									
+									</ul>
 								</div>
-						
-						</div>
-				</section>
 
+								<div class="col">
+										<img src="https://raw.githubusercontent.com/jp-guimaraes/intro_arduino/master/assets/uno_closeup.png" alt="Arduino uno" style="width:500px;height:500px;">
+									</div>
+							
+							</div>
+					</section>
+				</section>
+				
 				<section>
 					<section id="fragments">
 						<h3>Simulador</h3>
@@ -150,6 +150,7 @@
 						<p class="fragment">Iniciar a simulação</p>
 					</section>					
 				</section>
+				<section>
 
 				<section>
 					<h3>Hello world!</h3>					
@@ -272,7 +273,8 @@ void loop(){
 }								
 					</code></pre>							
 				</section>
-
+			</section>
+			<section>
 				<section>
 					<h3>Quiz: Incrementando o código!</h3>
 					<p class="fragment">Crie a conta no <a href="https://www.tinkercad.com/">Tinkercad</a></p>
@@ -307,8 +309,10 @@ void loop(){
 }				
 						</code></pre>											
 					</section>
-
-										
+				</section>
+				
+				
+				
 				<section>
 							<h2>Funções são bem vindas!</h2>
 							<pre><code>
@@ -373,6 +377,7 @@ void loop(){
 					</code></pre>
 					<p>Circuito 5</p>							
 				</section>
+<section>
 
 				<section>
 					<h3>Saída digital, ok...</h3>
@@ -441,9 +446,11 @@ void loop(){
 						<p>Modifique o exemplo(hardware/software) anterior incluindo um botão para ligar o led e um segundo para desligar.</p> 						
 						<p>Circuito 8</p>
 				</section>
+
+			
 		
 				<section>
-						<h2>Estruturas de repetição funcionam normalmente</h2>
+						<h2>Código da resposta</h2>
 						<pre><code>
 const int botao_liga = 8;   
 const int botao_desliga = 7; // pino de entrada (ligar o botão)
@@ -479,6 +486,8 @@ void loop() {
 					<p>Circuito 8</p>							
 				</section>
 
+			</section>
+
 				<section>
 					<h2>Entradas e saídas digitais?</h2>
 					<p>OK! Mas, e entradas e saídas analógicas?</p>					
@@ -492,14 +501,15 @@ void loop() {
 				</section>
 
 				<section>
-					<h2>Saída analógica</h2>
-					<p>Muito usada para fazer interface com atuadores!</p>
-					<p>Pinos especiais para conexão?</p>
-					<p>Pulse Width Modulation - PWM</p>
-				</section>
-
-				<section>
+					<section>
 						<h2>Saída analógica</h2>
+						<p>Muito usada para fazer interface com atuadores!</p>
+						<p>Pinos especiais para conexão?</p>
+						<p>Pulse Width Modulation - PWM</p>
+					</section>
+
+					<section>
+							<h2>Saída analógica</h2>
 						<pre><code>
 int brilho = 0;
 
@@ -521,14 +531,16 @@ void loop(){
 					</code></pre>
 					<p>Circuito 10</p>							
 				</section>
-
+			</section>
 
 				<section>
-					<h3>Interface com outros dispositivos</h3>
-					<p>Comunicação serial</p>					
-				</section>
-				
-				<section>
+
+					<section>
+						<h3>Interface com outros dispositivos</h3>
+						<p>Comunicação serial</p>					
+					</section>
+					
+					<section>
 						<h2>Comunicação Serial</h2>
 						<pre><code>
 void setup(){
@@ -542,16 +554,16 @@ void loop(){
 }											
 					</code></pre>
 					<p>Circuito 10</p>							
-				</section>
+					</section>
 
-				<section>
-					<h3>Quiz!</h3>
-					<p>Modifique o hardware/fimrware anteriores para enviar o valor da entrada analógica pela porta serial ao computador.</p>
-				</section>
+					<section>
+						<h3>Quiz!</h3>
+						<p>Modifique o hardware/fimrware anteriores para enviar o valor da entrada analógica pela porta serial ao computador.</p>
+					</section>
 
-				<section>
-						<h2>Comunicação Serial</h2>
-						<pre><code>
+					<section>
+							<h2>Comunicação Serial</h2>
+							<pre><code>
 int sensorValue = 0;
 
 void setup(){
@@ -566,8 +578,10 @@ void loop(){
 	Serial.println(sensorValue);
 	delay(10); // Delay a little bit to improve simulation performance
 }											
-					</code></pre>
-					<p>Circuito 10</p>							
+						</code></pre>
+						<p>Circuito 10</p>							
+					</section>
+
 				</section>
 
 				<section>
