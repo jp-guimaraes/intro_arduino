@@ -511,8 +511,52 @@ void loop(){
 
 
 				<section>
-					Comunicação serial
+					<h3>Interface com outros dispositivos</h3>
+					<p>Comunicação serial</p>					
 				</section>
+				
+				<section>
+						<h2>Comunicação Serial</h2>
+						<pre><code>
+void setup(){
+	pinMode(A0, INPUT);
+	Serial.begin(9600);
+}
+
+void loop(){	
+	Serial.println("ola mundo");
+	delay(10); // macete para melhorar a simulacao
+}											
+					</code></pre>
+					<p>Circuito 10</p>							
+				</section>
+
+				<section>
+					<h3>Quiz!</h3>
+					<p>Modifique o hardware/fimrware anteriores para enviar o valor da entrada analógica pela porta serial ao computador.</p>
+				</section>
+
+				<section>
+						<h2>Comunicação Serial</h2>
+						<pre><code>
+int sensorValue = 0;
+
+void setup(){
+	pinMode(A0, INPUT);
+	Serial.begin(9600);
+}
+
+void loop(){
+	// read the input on analog pin 0:
+	sensorValue = analogRead(A0);
+	// print out the value you read:
+	Serial.println(sensorValue);
+	delay(10); // Delay a little bit to improve simulation performance
+}											
+					</code></pre>
+					<p>Circuito 10</p>							
+				</section>
+
 				<section>
 					<h4>Dúvidas, críticas, sugestões?</h4>
 					<p> <small><a href = "mailto: joao.guimaraes@ifrn.edu.br">joao.guimaraes@ifrn.edu.br</a></small> </p>
