@@ -356,7 +356,8 @@ void setup(){
 // Laço principal 	
 void loop(){
 	for(int i=250;i<=2000;i=i+250){
-	piscar(i);
+		piscar(i);
+	}
 }																		
 					</code></pre>
 					<p>Circuito 5</p>							
@@ -380,12 +381,12 @@ void loop(){
 								<ul>
 									<li>Saída de dados digitais</li>
 									<li>Portas digitais podem ser configuradas como entrada digital</li>
-									<li>Como funciona o botão?</li>
+									<li>Como funciona o botão(push button)?</li>
 									<li>Circuito 6</li>								
 								</ul>
 							</div>
 
-							<div class="col">
+							<div class="col"> 
 									<img src="https://raw.githubusercontent.com/jp-guimaraes/intro_arduino/master/assets/circuitos/c6.png" alt="Circuito 6" style="width:750px;height:350px;">
 							</div>
 						
@@ -393,8 +394,8 @@ void loop(){
 				</section>
 
 				<section>
-					<h3>Saída digial, ok...</h3>
-					<p>mas e entrada?</p>
+					<h3>Entrada digital</h3>
+					<p>conectando push button ao arduino</p>
 					<style>
 						.container{
 							display: flex;
@@ -421,7 +422,97 @@ void loop(){
 						
 						</div>
 				</section>
+
+				<section>
+					<h3>Quiz!</h3>
+						<p>Modifique o exemplo(hardware/software) anterior incluindo um botão para ligar o led e um segundo para desligar.</p> 						
+						<p>Circuito 8</p>
+				</section>
 		
+				<section>
+						<h2>Estruturas de repetição funcionam normalmente</h2>
+						<pre><code>
+const int botao_liga = 8;   
+const int botao_desliga = 7; // pino de entrada (ligar o botão)
+const int ledPin =  12;      // Pino de saída (ligar o led)
+
+int estado_botao_liga;  
+int estado_botao_desliga; 
+
+void setup() {
+	// Inicializa o pino do led como saída
+	pinMode(ledPin, OUTPUT);
+	// Inicializa o pino do botão como entrada
+	pinMode(botao_liga, INPUT);
+	pinMode(botao_desliga, INPUT);	
+}
+
+void loop() {
+	// le o pino de entrada de forma digital
+	estado_botao_liga = digitalRead(botao_liga);
+	estado_botao_desliga = digitalRead(botao_desliga);
+
+	// Se o botão tiver sido pressionado
+	if (estado_botao_liga == HIGH) {
+		// liga o led
+		digitalWrite(ledPin, HIGH);
+	}
+	if (estado_botao_desliga == HIGH) {
+		// desliga o led
+		digitalWrite(ledPin, LOW);
+	}
+}																	
+					</code></pre>
+					<p>Circuito 8</p>							
+				</section>
+
+				<section>
+					<h2>Entradas e saídas digitais?</h2>
+					<p>OK! Mas, e entradas e saídas analógicas?</p>					
+				</section>
+
+				<section>
+					<h2>Entrada analógica</h2>
+					<p>Muito usada para fazer interface com sensores!</p>
+					<p>Pinos especiais para conexão</p>
+					<p>Circuito 9</p>
+				</section>
+
+				<section>
+					<h2>Saída analógica</h2>
+					<p>Muito usada para fazer interface com atuadores!</p>
+					<p>Pinos especiais para conexão?</p>
+					<p>Pulse Width Modulation - PWM</p>
+				</section>
+
+				<section>
+						<h2>Saída analógica</h2>
+						<pre><code>
+int brilho = 0;
+
+void setup(){
+	pinMode(9, OUTPUT);
+}
+
+void loop(){
+	for (brilho = 0; brilho <= 255; brilho += 5) {
+		analogWrite(9, brilho);
+		delay(30); // Wait for 30 millisecond(s)
+	}
+	
+	for (brilho = 255; brilho >= 0; brilho -= 5) {
+		analogWrite(9, brilho);
+		delay(30); // Wait for 30 millisecond(s)
+	}
+}																
+					</code></pre>
+					<p>Circuito 10</p>							
+				</section>
+
+
+				<section>
+					Comunicação serial
+				</section>
 				<section>
 					<h4>Dúvidas, críticas, sugestões?</h4>
 					<p> <small><a href = "mailto: joao.guimaraes@ifrn.edu.br">joao.guimaraes@ifrn.edu.br</a></small> </p>
